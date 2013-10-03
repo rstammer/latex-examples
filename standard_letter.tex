@@ -1,0 +1,57 @@
+\documentclass[11pt, a4paper]{scrlttr2}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[activate]{microtype}
+\usepackage{eurosym}
+\usepackage{graphicx}
+\KOMAoptions{paper=a4, foldmarks=false, fromalign=left, parskip=half,
+fromrule=aftername,fromphone,fromemail, backaddress=false, enlargefirstpage=true}
+ 
+\setkomavar{fromname}{Bob Schmidt} 		
+\setkomavar{fromaddress}{Straßmannstraße 100\\10249 Berlin} 
+\setkomavar{fromphone}{+049 172 314 159 2}
+\setkomavar{fromemail}{sendmeamail@examplemailer.com}
+\setkomavar{signature}{Randy G. Fitzsimmons}		
+\setkomavar{subject}{A very important Subject}
+\setkomavar{place}{Berlin} 	
+\setkomavar{date}{den \today}
+
+% KOMA vs DIN: Ausrichtung des Textkörpers unter der Adresse
+% DIN will das. KOMA sagt: Das ist typografisch nicht richtig
+\usepackage{calc}
+\makeatletter
+\@setplength{refwidth}{\textwidth}
+\@setplength{refhpos}{\useplength{toaddrhpos}}
+\setlength{\oddsidemargin}{\useplength{toaddrhpos}-1in}
+\makeatother
+
+
+% die Signatur ist linksbuendig
+\let\raggedsignature=\raggedright		    
+ 
+\begin{document}
+\sffamily
+
+%\enlargethispage{8cm}
+\begin{letter}{foobarbaz GmbH\\Bruce-Schneier-Allee 404\\Hamburg}
+
+\opening{Sehr geehrte Damen und Herren,}
+Lebowski ipsum our basic freedoms. Dolor sit amet, consectetur adipiscing elit praesent ac magna. 
+Sure. That and a pair of testicles. Justo pellentesque ac lectus quis elit blandit. You want a toe? 
+I can get you a toe, believe me. There are ways, Dude. You don't wanna know about it, believe me.
+Fringilla a ut turpis praesent felis. I'm not Mr. Lebowski; you're Mr. Lebowski. I'm the Dude.
+Ligula, malesuada suscipit malesuada non, ultrices non urna sed orci..
+\\
+\\
+%\closing{Mit freundlichen Grüßen}
+Mit freundlichen Grüßen \\
+\newline
+\mbox 
+\newline
+% you may use a graphic for your sign:
+%\includegraphics[scale=0.8]{sign.jpg} \\
+Randy G. Fitzsimmons
+
+\encl{Bescheinigung1\\TolleGeschichte}
+\end{letter}
+\end{document}
