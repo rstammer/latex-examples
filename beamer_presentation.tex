@@ -1,0 +1,51 @@
+% Small example for a beamer presentation
+\documentclass{beamer}
+
+%\usepackage[utfx8]{inputenc}
+\usepackage{default}
+
+%\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel}
+
+\title{Simplex-Algorithmus}
+\author{Selman, Laing, U\c{c}ar, Neumann}
+\date{\today}
+
+\begin{document}
+\begin{frame}
+\frametitle{Probleme bei der Implementierung und Auswertung} 
+\"Uber folgende Fragestellungen m\"ussen wir noch nachdenken:
+\\
+\pause
+\begin{enumerate}
+ \item<1-> Datenkommunikation
+ \pause
+ \\
+  \begin{enumerate}
+   \item<1-> externe Dateien als Eingabedaten: Welche Dateiformate? (z.B.: *.xls; *.txt; *.m)
+   \pause
+   \item<2-> Welche built-in-Funktionalit\"aten bietet Matlab f\"ur 1.1? 
+   \pause
+   \item<3-> Aufbereitung der Ausgabedaten: Wie soll das Simplex-Tableau genau aussehen?
+   \pause
+  \end{enumerate}
+ \item<2-> Verhalten des Programms in Fehlersituationen
+ \pause
+  \begin{enumerate}
+   \item<1-> Welche Datentypen sollen als Koeffizienten akzeptiert werden? \\ ($\rightarrow$ Mantissenl\"ange?)
+             Inwieweit soll das Programm m\"ogliche \"Uberlauf-Situationen (u.\"A.) abfangen? 
+   \pause
+   \item<2-> Welche weiteren Fehlersituationen können auftreten?
+  \end{enumerate}
+\end{enumerate}
+\end{frame}
+
+%\begin{frame}[allowframebreaks]
+%\frametitle{erster Entwurf} 
+%\includegraphics[scale=0.5]{screen.png} \\
+%\includegraphics[scale=0.5]{screen0.png} \\
+%\includegraphics[scale=0.35]{screen1.png}
+%\end{frame}
+
+\end{document}

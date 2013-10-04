@@ -4,3 +4,6 @@
 *.tex.backup
 *.tex~
 *.out
+*.snm
+*.toc
+*.nav
