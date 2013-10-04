@@ -1,0 +1,180 @@
+\documentclass[paper=a4, 
+               fontsize=11pt, 
+               DIV=13, 
+               BCOR=14.0mm, 
+               titlepage=true,
+               ngerman]
+               {scrbook}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{scrpage2}
+\usepackage{typearea}
+\usepackage{microtype}
+\usepackage{float}
+\usepackage{scrtime}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{cite}
+
+\usepackage[standard]{ntheorem}
+\usepackage{enumitem} 
+
+\newtheorem{thm}{Satz}[chapter]
+\numberwithin{equation}{chapter}
+\numberwithin{Definition}{chapter}
+\numberwithin{definition}{chapter}
+\numberwithin{Korollar}{chapter}
+\numberwithin{korollar}{chapter}
+\numberwithin{Lemma}{chapter}
+\numberwithin{lemma}{chapter}
+\numberwithin{Proposition}{chapter}
+\numberwithin{proposition}{chapter}
+\numberwithin{Beispiel}{chapter}
+\numberwithin{Bemerkung}{chapter}
+
+% some KOMA stuff
+\pagestyle{scrheadings}
+\renewcommand*{\chapterpagestyle}{scrheadings} 
+\setheadsepline{0.25pt}
+\setfootsepline{0.25pt}
+\automark[chapter]{section}
+\renewcommand{\baselinestretch}{1.2}\normalsize
+
+%\setkomafont{section}{\fontsize{20bp}{8.8bp}\selectfont\bfseries}
+\renewcommand*{\headfont}{%
+\normalfont}%\sffamily}%\bfseries}
+
+% kommutative Diagramme
+\usepackage[arrow, matrix, curve]{xy}
+
+% custom commands
+\newcommand{\rtrace}[1]{\mbox{ }^R\operatorname{Tr} \left( #1 \right)}
+\newcommand{\rint}{\mbox{ }^R \int\limits_M}
+\newcommand{\heatop}[1]{e^{-#1\Delta_\tau}}
+\newcommand{\heatopp}[2]{e^{-#1\Delta_{#2}}}
+
+\newcommand{\FP}[1]{\underset{#1=0}{\operatorname{FP}}}
+\newcommand{\wheat}{\omega'(\tau)\left( \heatop{t} - \mathcal{P} \right) }
+\newcommand{\wheatt}{\omega'(\tau) \heatop{t} }
+\newcommand{\del}[1]{\partial_{#1}}
+\newcommand{\duhamel}[1]{\int_0^t \heatop{(t-s)} #1 \heatop{s} \mathrm{ds}}
+\newcommand{\tr}[1]{\operatorname{Tr}\left( #1 \right)}
+\newcommand{\trzero}[1]{\operatorname{Tr}_{0}\left( #1 \right)}
+\newcommand{\kernel}[1]{\left. #1 \right|_{\operatorname{diag}}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\lpspace}{L^2(M,g)}
+\newcommand{\psiheat}[2]{\Psi^{#1,#2}_{e,\text{Heat}}(M,E)}
+\newcommand{\heatkernel}[1]{\left. \mathcal{K}_{\Delta_{#1}} \right|_{\operatorname{diag}}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\funnels}{\bigcup_{i=1}^{n_F} \mathcal{F}_i}
+\newcommand{\morespace}{\\ \mbox{} \\}
+\newcommand{\phg}{\mathcal{A}^{\ast}_{\operatorname{phg}}(M)}
+\newcommand{\phgX}{\mathcal{A}^{\ast}_{\operatorname{phg}}(X)}
+
+\newcommand{\area}{\operatorname{Area}(g_\tau)}
+\newcommand{\invarea}{\frac{1}{\area}}
+\newcommand{\brackets}[2]{\langle #1,#2 \rangle}
+\newcommand{\polyakov}{ \log \frac{\det \Delta_1}{\det \Delta_0} = -\frac{1}{12 \pi} \int_M \{ |\nabla \varphi|_0^2 + 2 \varphi K_0\} \mathrm{dvol_{g_0}}}
+
+\newcommand{\var}[2]{\left. \mathrm{\frac{d}{d#1}}\right|_{#1 = 0} #2 }
+\newcommand{\genvar}[3]{\left. \mathrm{\frac{d}{d#1}}\right|_{#1 = #2} #3 }
+\newcommand{\vardel}[2]{\left. \del{#1}\right|_{#1 = 0} #2 }
+\newcommand{\proj}[1]{\mathcal{P}_{\ker \Delta_{#1}}}
+\newcommand{\der}[1]{\mathrm{\frac{d}{d#1}}}
+\renewcommand{\Re}{\operatorname{Re}}
+
+\allowdisplaybreaks[1]
+\newcommand{\boxeqn}[1]{
+\[
+\fbox{
+\addtolength{\linewidth}{-2\fboxsep}%
+\addtolength{\linewidth}{-2\fboxrule}%
+\begin{minipage}{\linewidth}
+\begin{align*}
+#1
+\end{align*}
+\end{minipage}
+}
+\]
+}
+
+%opening
+\title{Hier steht das Thema}
+\subject{Diplomarbeit}
+\author{Robin Neumann}
+% \publishers
+
+\begin{document}
+%\textbf{timestamp:} This file was compiled \today, \thistime
+\thispagestyle{empty}
+
+\hspace{20cm}
+\vspace{0cm}
+\begin{figure}
+[H] %\hspace{11cm}
+
+\begin{center}
+  \vspace{0.5 cm}
+  \huge{\bf Was ich schon immer mal sagen wollte} \\ 
+  \vspace{1.5cm}
+  \LARGE  Diplomarbeit \\ .
+  \vspace{1cm}
+  
+\begin{center}
+%\includegraphics[width=3.2 cm]{HU_Logo} % Logo of your university goes here
+\vspace{1.0cm} 
+\end{center}
+  \vspace{2cm}
+  {\large
+    \bf{
+      \scshape
+      Humboldt-Universit\"at zu Berlin \\
+      Mathematisch-Naturwissenschaftliche Fakult\"at II \\
+      Institut f\"ur Mathematik\\
+    }
+  } 
+  % \normalfont
+\end{center}
+\end{figure}
+
+\vspace {2.1 cm}% gegebenenfalls kleiner, falls der Titel der Arbeit sehr lang sein sollte
+%{3.2 cm} bei Verwendung von scrreprt, gegebenenfalls kleiner, falls der Titel der Arbeit sehr lang sein sollte
+{\large
+  \begin{tabular}{llll}
+    eingereicht von:    & Max Musterstudent && \\ % Bitte Vor- und Nachnamen anstelle der Punkte eintragen.
+    geboren am:         & 01.02.2010 && \\
+    in:                 & Berlin && \\
+    &&&\\
+    Gutachter(innen): & Prof. Dr. A. Beispielprof && \\
+		      & Prof. Dr. B. Beispielprof&& \\% Bitte Namen der Gutachter(innen) anstelle der Punkte eintragen
+				 % bei zwei männlichen Gutachtern kann das (innen) weggestrichen werden
+    &&&\\
+    eingereicht am:     & \dots\dots  \hspace{3cm} verteidigt am: & \dots\dots \\ % Bitte lassen Sie
+  \end{tabular}
+} 
+\tableofcontents
+\chapter{Einführung}
+Hier steht ein wenig einführender Text, der den folgenden Satz motiviert:
+\begin{thm}[\cite{Polyakov1981}]
+Sei $M$ eine geschlossene Fläche, $g_0$ eine Riemannsche Metrik auf $M$ und $g_1 = e^{2\varphi}g_0$ für ein $\varphi \in C^{\infty}(M)$. Es gelte
+weiterhin $\operatorname{vol}(M,g_0) = \operatorname{vol}(M,g_1)$. $\Delta_0$ bezeichne den Laplace-Beltrami-Operator
+zu $g_0$ und $\Delta_1$ den Laplace-Beltrami-Operator zu $g_1$. Dann gilt:
+\begin{equation}
+\label{eq:polyakov}
+\polyakov.
+\end{equation}
+\end{thm}
+\begin{Beweis}
+\dots
+\flushright$\square$ 
+\end{Beweis}
+
+\section{Dies ist ein Unterabschnitt}
+Hier stehen nützliche Dinge.
+\nocite{*} % Sagt: Zeige alle Quellen aus der Datei, auch die, die nicht direkt zitiert wurden
+\bibliographystyle{amsalpha}
+\bibliography{literatur}
+\end{document}

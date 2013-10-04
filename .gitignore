@@ -7,3 +7,7 @@
 *.snm
 *.toc
 *.nav
+*.bbl
+*.blg
+*.thm
+*.bib~
